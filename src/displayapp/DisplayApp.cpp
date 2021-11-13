@@ -16,7 +16,6 @@
 #include "displayapp/screens/FirmwareUpdate.h"
 #include "displayapp/screens/FirmwareValidation.h"
 #include "displayapp/screens/InfiniPaint.h"
-#include "displayapp/screens/Paddle.h"
 #include "displayapp/screens/StopWatch.h"
 #include "displayapp/screens/Meter.h"
 #include "displayapp/screens/Metronome.h"
@@ -25,7 +24,6 @@
 #include "displayapp/screens/Notifications.h"
 #include "displayapp/screens/SystemInfo.h"
 #include "displayapp/screens/Tile.h"
-#include "displayapp/screens/Twos.h"
 #include "displayapp/screens/FlashLight.h"
 #include "displayapp/screens/BatteryInfo.h"
 #include "displayapp/screens/Steps.h"
@@ -432,14 +430,8 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
     case Apps::StopWatch:
       currentScreen = std::make_unique<Screens::StopWatch>(this, *systemTask);
       break;
-    case Apps::Twos:
-      currentScreen = std::make_unique<Screens::Twos>(this);
-      break;
     case Apps::Paint:
       currentScreen = std::make_unique<Screens::InfiniPaint>(this, lvgl, motorController);
-      break;
-    case Apps::Paddle:
-      currentScreen = std::make_unique<Screens::Paddle>(this, lvgl);
       break;
     case Apps::Music:
       currentScreen = std::make_unique<Screens::Music>(this, systemTask->nimble().music());
